@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu i {
+  font-size: 32px;
+}
+
+.menu a {
+  margin: 30px 0;
+}
+
+.page {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.guide {
+  position: absolute;
+  height: 100%;
+}
+
+#page1 {
+  width: 100%;
+  background: #0c2331;
+  left: 0;
+}
+
+#page2 {
+  background: #1f587c;
+}
+
+#page3 {
+  background: deeppink;
+}
+
+#page4 {
+  background: rebeccapurple;
+}
+
+#page2,
+#page3,
+#page4 {
+  width: 90%;
+  left: 10%;
+  transform: translateX(190%);
+}
+
+.menu a {
+  transition: all .5s ease-out;
+  color: #fff;
+}
+
+.menu a:hover {
+  opacity: 0.5;
+}
+
+.page,
+.guide {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.page i {
+  font-size: 80px;
+}
+
+.guide i {
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.page h2 {
+  font-size: 36px;
+  line-height: 2;
+}
+
+.guide h2 {
+  font-size: 36px;
+  line-height: 2;
+  text-align: center;
+}
+
+.page span {
+  font-size: 17px;
+}
+
+.guide span {
+  font-size: 17px;
+}
+
+.page,
+.guide {
+  transition: all .5s cubic-bezier(0.5, 0.2, 0.2, 1.1);
+}
+
+#tab2:target #page2,
+#tab3:target #page3,
+#tab4:target #page4 {
+  transform: translateX(0);
+  transition-delay: 0.4s;
+}
+
+#tab2:target #page1,
+#tab3:target #page1,
+#tab3:target #page4 {
+  background: #000;
+  filter: blur(3px);
+}
+
+#tab2:target .menu a,
+#tab3:target .menu a,
+#tab4:target .menu a {
+  transform: scale(0.75);
+  transition-delay: 0.25s;
+}
+
+#tab2:target .menu .two,
+#tab3:target .menu .three,
+#tab4:target .menu .four {
+  transform: scale(1.2);
+}
+
+.page span a {
+  color: yellow;
+  transition: all 0.25s ease-out;
+}
+
+.page span a:hover {
+  color: #fff;
+}
+
+.page .wrap {
+  width: 50%;
+  transform: translateX(200%);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1.25);
+}
+
+.page#page1 .wrap {
+  transform: translateX(0);
+}
+
+#tab2:target .page#page2 .wrap,
+#tab3:target .page#page3 .wrap,
+#tab4:target .page#page4 .wrap {
+  transform: translateX(0);
+  transition-delay: 1s;
+}
+
+
+#page1 img {
+  width: 100%;
+}
+
+ul {
+  list-style: '✅';
+}
+
+.group-list {
+  column-count: 4;
+  column-gap: 20;
+}
+
+mark {
+  background-color: #000;
+  color: #fff;
+}
+
+.guide ul {
+  list-style-type: none;
+}
+
+/* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  user-select: none;
+  /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "\25B6";
+  color: #fff;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
